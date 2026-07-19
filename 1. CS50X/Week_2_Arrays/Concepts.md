@@ -10,7 +10,7 @@
     * **argc (Argument Count):** An integer representing the total number of words/arguments typed in the terminal command. | Standard C Memory Structure: int
     * **argv (Argument Vector):** An array of character pointers (the native C equivalent of strings) containing the actual text of the arguments passed. | Standard C Memory Structure: char *[]
 * **Exit Status (Return Codes):** An integer value returned by the "int main" function to the operating system when a program terminates, signaling exactly how the execution concluded.
-    * **Succes (0):** Returning '0' explicitly tells the operating system that the program executed flawlessly without encountering any errors.
+    * **Success (0):** Returning '0' explicitly tells the operating system that the program executed flawlessly without encountering any errors.
     * **Failure (Non-Zero):** Returning '1' (or any other non-zero integer) signals to the operating system that an error occured. We can assign different non-zero values to different types of errors to make debugging easier.
     * **Status Check (echo $?):** A CLI command used in the terminal immediately after executing a program to print the hidden exit status of that most recently run process.
 
