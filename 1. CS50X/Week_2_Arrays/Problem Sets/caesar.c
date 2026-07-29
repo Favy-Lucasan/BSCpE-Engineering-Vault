@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+char encipher (char c, int k);
+
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -31,24 +33,26 @@ int main(int argc, char *argv[])
 
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        if (isupper(text[i]))
-        {
-            int num = text[i] - 'A';
-            char c = (num + k) % 26 + 'A';
-
-            printf("%c", c);
-        }
-        else if (islower(text[i]))
-        {
-            int num = text[i] - 'a';
-            char c = (num + k) % 26 + 'a';
-
-            printf("%c", c);
-        }
-        else
-        {
-            printf("%c", text[i]);
-        }
+        char encrypted = encipher(text[i], k);
+        printf("%c", encrypted);
     }
     return 0;
+}
+
+char encipher (char c, int k)
+{
+    if (isupper(c))
+    {
+        int num = c - 'A';
+        return ((num + k) % 26) + 'A';
+    }
+    else if (islower(c))
+    {
+        int num = c - 'a';
+        return ((num + k) % 26) + 'a';
+    }
+    else
+    {
+        return c;
+    }
 }
