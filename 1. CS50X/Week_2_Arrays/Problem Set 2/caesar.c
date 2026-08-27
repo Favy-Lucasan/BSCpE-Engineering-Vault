@@ -3,23 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+int only_digits(char *key);
 char encipher (char c, int k);
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    if (argc != 2 || !only_digits(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
-    }
-
-    for (int i = 0; argv[1][i] != '\0'; i++)
-    {
-        if (!isdigit(argv[1][i]))
-        {
-            printf("Usage: ./caesar key\n");
-            return 1;
-        }
     }
 
     char text[1000];
@@ -37,6 +29,18 @@ int main(int argc, char *argv[])
         printf("%c", encrypted);
     }
     return 0;
+}
+
+int only_digits(char *key)
+{
+    for (int i = 0; key[i] != '\0'; i++)
+    {
+        if (!isdigit(key[i]))
+        {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 char encipher (char c, int k)

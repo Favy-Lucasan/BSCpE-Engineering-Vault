@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It has the longest running time compared to sort2 and sort3. The only time Bubble Sort (sort1) beats Selection Sort (sort3) is when the numbers are already sorted since it runs in omega(n) time.
+
+sort2 uses: Merge Sort
+
+How do you know?: It has the fastest running time compared to sort1 and sort3 in all cases of the arrangement of numbers. It just proves how time-efficient O(n log n) is.
+
+sort3 uses: Selection Sort
+
+How do you know?: It is the second fastest running time after sort2. It only loses to Bubble Sort (sort1) when the numbers are already sorted since it still runs in omega(n^2) time.
